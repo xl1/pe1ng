@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pe1ng</title>
+    <style>
+    body {
+        max-width: 640px;
+        margin: auto;
+        text-align: center;
+        font-family: Consolas, 'Courier New', monospace;
+    }
+    #errorMessage {
+        background: #fdd;
+        color: #b00;
+        padding: 0.5em;
+    }
+    #errorMessage:empty {
+        display: none;
+    }
+    #howto {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <h1>Pe1ng</h1>
+    <div>
+        <p>
+            まずは質問箱を 1 秒で作ってみましょう
+        </p>
+        <p>
+            1Pe1ng
+            <input type="text" id="username" placeholder="ID" pattern="[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*">
+            <input type="button" id="createButton" value="Create">
+        </p>
+    </div>
+    <div class="resultArea">
+        <p id="errorMessage"></p>
+        <a id="address" class="result" target="_blank"></a>
+        <p id="howto">
+            <a href="https://www.google.co.jp/search?q=op_return" target="_blank">質問を送る</a>
+        </p>
+    </div>
+    <script src="index.js"></script>
+</body>
