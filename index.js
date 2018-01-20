@@ -26,7 +26,7 @@ $('createButton').addEventListener('click', async ev => {
     try {
         bytes = base58.decode(b58str);
     } catch (e) {
-        error('ID には 0 (ゼロ), O (オー), 1 (イチ), l(エル) を除く英数字のみ使用できます');
+        error('ID には 0 (ゼロ), O (オー), I (アイ), l(エル) を除く英数字のみ使用できます');
         return;
     }
     if (bytes.length > 20) {
