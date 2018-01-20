@@ -1,0 +1,16 @@
+{
+  "name": "pe1ng",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html -d docs --public-url .",
+    "test": "node test/index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.4.1"
+  }
+}
