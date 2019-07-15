@@ -1,11 +1,11 @@
-const base58 = require('../lib/base58');
-const assert = require('assert');
+import { encode, decode } from '../lib/base58.mjs';
+import { strict as assert } from 'assert';
 
 function compare(str, ba) {
-    const encoded = base58.encode(ba);
+    const encoded = encode(ba);
     assert.strictEqual(encoded, str);
 
-    const decoded = base58.decode(str);
+    const decoded = decode(str);
     assert.strictEqual(decoded.length, ba.length);
     for (let i = 0; i < decoded.length; i++) {
         assert.strictEqual(decoded[i], ba[i]);

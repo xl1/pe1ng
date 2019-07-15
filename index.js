@@ -1,4 +1,4 @@
-const base58 = require('./lib/base58');
+import { decode, encode } from './lib/base58.mjs';
 
 const $ = id => document.getElementById(id);
 
@@ -24,7 +24,7 @@ $('createButton').addEventListener('click', async ev => {
     const b58str = 'Pe1ng' + $('username').value;
     let bytes;
     try {
-        bytes = base58.decode(b58str);
+        bytes = decode(b58str);
     } catch (e) {
         error('ID には 0 (ゼロ), O (オー), I (アイ), l(エル) を除く英数字のみ使用できます');
         return;
@@ -43,7 +43,7 @@ $('createButton').addEventListener('click', async ev => {
     const hash2 = await crypto.subtle.digest('SHA-256', hash1);
     const checksum = new Uint8Array(hash2);
     const bytesWithCheck = Uint8Array.of(...bytes.slice(0, 21), ...checksum.slice(0, 4));
-    const address = base58.encode(bytesWithCheck);
+    const address = encode(bytesWithCheck);
 
     $('address').textContent = address;
     $('address').href = 'https://blockchain.info/address/' + address;
