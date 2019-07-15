@@ -4,13 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html -d docs --public-url .",
-    "test": "node test/index.js"
+    "test": "node --experimental-modules test/index.mjs"
   },
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "parcel-bundler": "^1.4.1"
-  }
+  "author": "xl1",
+  "license": "MIT"
 }
